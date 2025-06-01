@@ -1,0 +1,160 @@
+/* BLOG-SPECIFIC STYLES */
+.blog-hero {
+    padding: 40px 0;
+    margin-top: 0;
+    border-bottom: 2px solid var(--color-glass-border);
+}
+
+.blog-hero h2 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.blog-hero p {
+    font-size: 1.4rem;
+    max-width: 700px;
+    letter-spacing: 1px;
+}
+
+.blog-posts {
+    padding: 0;
+}
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0;
+}
+
+.post-card {
+    border: 2px solid var(--color-glass-border);
+    padding: 25px;
+    margin: -1px;
+    position: relative;
+    min-height: 250px;
+}
+
+.post-card:hover {
+    border-color: var(--color-accent);
+    z-index: 1;
+}
+
+.post-date {
+    font-size: 0.9rem;
+    color: #999;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.post-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.post-excerpt {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.post-link {
+    display: inline-block;
+    color: var(--color-accent);
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: opacity 0.3s;
+}
+
+.post-link:hover {
+    opacity: 0.8;
+}
+
+/* Single post page styles */
+.post-header {
+    margin-bottom: 3rem;
+}
+
+.post-meta {
+    display: flex;
+    color: #999;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
+
+.post-meta div {
+    margin-right: 2rem;
+}
+
+.post-content {
+    line-height: 1.8;
+}
+
+.post-content p {
+    margin-bottom: 1.5rem;
+}
+
+.post-content h3 {
+    margin: 2rem 0 1rem;
+    color: var(--color-accent);
+}
+
+.post-content pre {
+    background: rgba(30, 30, 30, 0.5);
+    padding: 1rem;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+    border: 1px solid var(--color-glass-border);
+}
+
+.post-content code {
+    font-family: var(--font-main);
+    font-size: 0.9rem;
+}
+
+.post-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-glass-border);
+}
+
+.post-nav a {
+    color: var(--color-accent);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.post-nav-prev:before {
+    content: "←";
+    margin-right: 0.5rem;
+}
+
+.post-nav-next:after {
+    content: "→";
+    margin-left: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .posts-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .post-meta {
+        flex-direction: column;
+    }
+    
+    .post-meta div {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+}

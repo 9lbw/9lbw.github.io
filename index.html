@@ -3,427 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>9lbw</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #1a1a1a;
-            color: #ffffff;
-            line-height: 1.3;
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 60px 40px;
-        }
-
-        /* Header Bio Section */
-        .bio-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 60px;
-            margin-bottom: 80px;
-            font-size: 1.1rem;
-            line-height: 1.4;
-        }
-
-        .bio-column p {
-            margin-bottom: 15px;
-        }
-
-        .bio-column strong {
-            font-weight: bold;
-        }
-
-        /* Main Title */
-        .main-title {
-            margin: 100px 0 80px 0;
-        }
-
-        .domain {
-            font-size: 5rem;
-            font-weight: normal;
-            color: #888888;
-            margin-bottom: -20px;
-            letter-spacing: -2px;
-        }
-
-        .name {
-            font-size: 8rem;
-            font-weight: 900;
-            color: #ffffff;
-            line-height: 0.9;
-            letter-spacing: -4px;
-        }
-
-        /* Separator Line */
-        .separator {
-            width: 100%;
-            height: 4px;
-            background: #444444;
-            margin: 80px 0;
-        }
-
-        /* Section Headers */
-        .section-title {
-            font-size: 4rem;
-            font-weight: 300;
-            color: #ffffff;
-            margin-bottom: 40px;
-            letter-spacing: -1px;
-        }
-
-        .section-title .highlight {
-            color: #00aaff;
-            font-weight: 900;
-        }
-
-        /* Blog Section */
-        .blog-section {
-            margin-top: 100px;
-        }
-
-        .blog-posts {
-            display: grid;
-            gap: 40px;
-            margin-top: 60px;
-        }
-
-        .blog-post {
-            background: #2a2a2a;
-            color: #ffffff;
-            padding: 40px;
-            transition: all 0.3s ease;
-        }
-
-        .blog-post:hover {
-            background: #333333;
-            color: #ffffff;
-        }
-
-        .blog-post h3 {
-            font-size: 2.5rem;
-            font-weight: 900;
-            margin-bottom: 15px;
-            line-height: 1.1;
-        }
-
-        .blog-date {
-            font-size: 1rem;
-            font-weight: normal;
-            margin-bottom: 25px;
-            opacity: 0.8;
-        }
-
-        .blog-excerpt {
-            font-size: 1.2rem;
-            line-height: 1.4;
-            margin-bottom: 30px;
-        }
-
-        .read-more {
-            display: inline-block;
-            font-size: 1rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            text-decoration: none;
-            color: inherit;
-            border-bottom: 2px solid currentColor;
-            padding-bottom: 2px;
-        }
-
-        /* About Section */
-        .about-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 80px;
-            margin-top: 60px;
-        }
-
-        .about-text {
-            font-size: 1.4rem;
-            line-height: 1.5;
-        }
-
-        .about-text p {
-            margin-bottom: 25px;
-        }
-
-        .skills-list {
-            background: #2a2a2a;
-            color: #ffffff;
-            padding: 40px;
-        }
-
-        .skills-list h3 {
-            font-size: 1.8rem;
-            font-weight: 900;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-        }
-
-        .skills-list ul {
-            list-style: none;
-        }
-
-        .skills-list li {
-            font-size: 1.1rem;
-            margin-bottom: 12px;
-            font-weight: 500;
-        }
-
-        .skills-list li:before {
-            content: "—";
-            margin-right: 15px;
-            font-weight: bold;
-        }
-
-        /* Contact */
-        .contact-section {
-            margin-top: 100px;
-            background: #2a2a2a;
-            color: #ffffff;
-            padding: 60px;
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-        }
-
-        .contact-info h3 {
-            font-size: 2rem;
-            font-weight: 900;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-        }
-
-        .contact-info p {
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-        }
-
-        .social-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .social-links a {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            border-bottom: 2px solid #ffffff;
-            padding-bottom: 2px;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: #00aaff;
-            border-color: #00aaff;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1200px) {
-            .bio-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 40px;
-            }
-            
-            .domain {
-                font-size: 4rem;
-            }
-            
-            .name {
-                font-size: 6rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 40px 20px;
-            }
-            
-            .bio-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-                font-size: 1rem;
-            }
-            
-            .domain {
-                font-size: 2.5rem;
-            }
-            
-            .name {
-                font-size: 3.5rem;
-            }
-            
-            .section-title {
-                font-size: 2.5rem;
-            }
-            
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            
-            .contact-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            
-            .blog-post h3 {
-                font-size: 1.8rem;
-            }
-            
-            .about-text {
-                font-size: 1.2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .domain {
-                font-size: 2rem;
-            }
-            
-            .name {
-                font-size: 2.8rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .social-links {
-                flex-direction: column;
-                gap: 15px;
-            }
-        }
-    </style>
+    <title>9lbw | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap">
 </head>
 <body>
-    <div class="container">
-        <!-- Bio Header -->
-        <div class="bio-grid">
-            <div class="bio-column">
-                <p>Hello! I'm <strong>9lbw</strong>, a modder and developer with a passion for the Source Engine. I create mods for various Source games, particularly <strong>Garry's Mod</strong>.</p>
+    <header>
+        <div class="header-container">
+            <h1>9lbw</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#projects">PROJECTS</a></li>
+                    <li><a href="#skills">SKILLS</a></li>
+                    <li><a href="blog/index.html">BLOG</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="glass-panel">
+            <div class="container grid">
+                <div class="hero-text">
+                    <h2>DEVELOPER</h2>
+                    <h3>ZIG • LUA • JAVA • C</h3>
+                    <p>Building digital solutions with a focus on networking and systems programming.</p>
+                </div>
+                <div class="hero-terminal">
+                    <div class="terminal-header">
+                        <span class="terminal-dot"></span>
+                        <span class="terminal-dot"></span>
+                        <span class="terminal-dot"></span>
+                        <span class="terminal-title">terminal</span>
+                    </div>
+                    <div class="terminal-body">
+                        <p><span class="prompt">~</span> $ whoami</p>
+                        <p>9lbw</p>
+                        <p><span class="prompt">~</span> $ uname -a</p>
+                        <p>Gentoo Linux</p>
+                        <p><span class="prompt">~</span> $ ls -la skills/</p>
+                        <p>zig lua java c networking roblox</p>
+                        <p><span class="prompt">~</span> $ _</p>
+                    </div>
+                </div>
             </div>
-            <div class="bio-column">
-                <p>I have experience with <strong>Arduino</strong> hardware projects and am proficient in <strong>Java</strong> and <strong>Lua</strong>. Currently teaching myself <strong>Zig</strong> and <strong>C</strong> to expand my systems programming skills.</p>
+        </section>
+
+        <section id="about" class="glass-panel">
+            <div class="container">
+                <h2>ABOUT ME</h2>
+                <div class="grid">
+                    <div class="about-text">
+                        <p>I go by 9lbw online. I'm a developer with expertise in Zig, Lua, Java, and Arduino C.</p>
+                        <p>I have a particular interest in computer networking and router technology.</p>
+                        <p>I run Gentoo Linux as my daily driver, embracing the philosophy of customization and optimization.</p>
+                        <p>Currently, I'm working as the main developer for RORTA Concepts, a Roblox developer group where I create immersive gaming experiences.</p>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-value">4+</span>
+                            <span class="stat-label">LANGUAGES</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">GENTOO</span>
+                            <span class="stat-label">LINUX</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">RORTA</span>
+                            <span class="stat-label">CONCEPTS</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="bio-column">
-                <p>I work on diverse projects including <strong>zbox</strong> (a GNU coreutils/busybox replacement in Zig), a <strong>Roblox game</strong> under RORTA Concepts, and my personal <strong>.dotfiles</strong> for Gentoo Linux.</p>
+        </section>
+
+        <section id="projects" class="glass-panel">
+            <div class="container">
+                <h2>PROJECTS</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-title">PROJECT_01</div>
+                        <div class="project-desc">A networking tool built with Zig</div>
+                        <div class="project-tags">
+                            <span>ZIG</span>
+                            <span>NETWORKING</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-title">PROJECT_02</div>
+                        <div class="project-desc">Roblox game for RORTA Concepts</div>
+                        <div class="project-tags">
+                            <span>LUA</span>
+                            <span>ROBLOX</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-title">PROJECT_03</div>
+                        <div class="project-desc">Arduino-based IoT system</div>
+                        <div class="project-tags">
+                            <span>C</span>
+                            <span>ARDUINO</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-title">PROJECT_04</div>
+                        <div class="project-desc">Custom router firmware</div>
+                        <div class="project-tags">
+                            <span>C</span>
+                            <span>NETWORKING</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="bio-column">
-                <p>I'm interested in <strong>computer networking</strong> and have been using <strong>Linux</strong> since 2019-2020, going full-time Linux in 2023. Always exploring new technologies and systems.</p>
+        </section>
+
+        <section id="skills" class="glass-panel">
+            <div class="container">
+                <h2>SKILLS</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>LANGUAGES</h3>
+                        <ul>
+                            <li>ZIG</li>
+                            <li>LUA</li>
+                            <li>JAVA</li>
+                            <li>ARDUINO C</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>TECHNOLOGIES</h3>
+                        <ul>
+                            <li>NETWORKING</li>
+                            <li>ROUTER CONFIGURATION</li>
+                            <li>GENTOO LINUX</li>
+                            <li>EMBEDDED SYSTEMS</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>OTHER</h3>
+                        <ul>
+                            <li>ROBLOX DEVELOPMENT</li>
+                            <li>SYSTEMS PROGRAMMING</li>
+                            <li>LINUX ADMINISTRATION</li>
+                            <li>OPEN SOURCE CONTRIBUTION</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 9lbw • Built with Brutalist Glassmorphism</p>
+            <div class="footer-links">
+                <a href="https://github.com/" target="_blank">GITHUB</a>
+                <a href="https://roblox.com/" target="_blank">ROBLOX</a>
+                <a href="blog/index.html">BLOG</a>
             </div>
         </div>
+    </footer>
 
-        <!-- Main Title -->
-        <div class="main-title">
-            <div class="domain">9lbw.github.io</div>
-            <div class="name">9lbw</div>
-        </div>
-
-        <div class="separator"></div>
-
-        <!-- About Section -->
-        <section class="about-section">
-            <h2 class="section-title">About <span class="highlight">Me</span></h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I'm passionate about modding and systems programming, with a focus on the Source Engine ecosystem. My journey started with creating modifications for Garry's Mod and other Source games, which taught me the fundamentals of game development and scripting.</p>
-                    <p>Currently expanding my skill set by learning lower-level programming languages like Zig and C, while maintaining proficiency in Java and Lua. I enjoy working on projects that challenge me to understand systems at a deeper level.</p>
-                    <p>When I'm not coding, I'm exploring computer networking concepts, tinkering with Arduino projects, or contributing to open-source initiatives. I believe in learning by doing and sharing knowledge with the community.</p>
-                </div>
-                <div class="skills-list">
-                    <h3>Skills & Technologies</h3>
-                    <ul>
-                        <li>Source Engine Modding</li>
-                        <li>Lua Programming</li>
-                        <li>Java Development</li>
-                        <li>Zig (Learning)</li>
-                        <li>C Programming (Learning)</li>
-                        <li>Arduino Hardware</li>
-                        <li>Linux Systems</li>
-                        <li>Computer Networking</li>
-                        <li>Git & Version Control</li>
-                        <li>Gentoo Linux</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <div class="separator"></div>
-
-        <!-- Blog Section -->
-        <section class="blog-section">
-            <h2 class="section-title">Recent <span class="highlight">Projects</span></h2>
-            <div class="blog-posts">
-                <article class="blog-post">
-                    <h3>zbox: A GNU Coreutils Alternative</h3>
-                    <div class="blog-date">Ongoing Project</div>
-                    <div class="blog-excerpt">
-                        <p>Building a GNU coreutils/busybox replacement written in Zig for fun and learning. This project helps me understand systems programming while exploring Zig's unique approach to memory management and performance.</p>
-                    </div>
-                    <a href="#" class="read-more">View on GitHub</a>
-                </article>
-
-                <article class="blog-post">
-                    <h3>RORTA Concepts Roblox Game</h3>
-                    <div class="blog-date">In Development</div>
-                    <div class="blog-excerpt">
-                        <p>Working on a Roblox game under the studio RORTA Concepts, applying my Lua skills in game development and exploring the creative possibilities within the Roblox platform.</p>
-                    </div>
-                    <a href="#" class="read-more">Learn More</a>
-                </article>
-
-                <article class="blog-post">
-                    <h3>Gentoo Dotfiles & Linux Journey</h3>
-                    <div class="blog-date">Continuous Evolution</div>
-                    <div class="blog-excerpt">
-                        <p>My personal dotfiles repository for Gentoo Linux, documenting my transition from Windows to full-time Linux usage. A collection of configurations and scripts that make my development environment efficient.</p>
-                    </div>
-                    <a href="#" class="read-more">Explore Configs</a>
-                </article>
-            </div>
-        </section>
-
-        <div class="separator"></div>
-
-        <!-- Contact Section -->
-        <section class="contact-section">
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Let's Connect</h3>
-                    <p><strong>GitHub:</strong> 9lbw</p>
-                    <p><strong>Focus:</strong> Source Engine Modding & Systems Programming</p>
-                    <p><strong>Currently Learning:</strong> Zig, C, and Computer Networking</p>
-                    <p>Always interested in collaborating on modding projects, open source contributions, or discussing Linux and programming.</p>
-                </div>
-                <div class="contact-info">
-                    <h3>Find Me Online</h3>
-                    <div class="social-links">
-                        <a href="#">GitHub</a>
-                        <a href="#">Steam Workshop</a>
-                        <a href="#">Roblox</a>
-                        <a href="#">Discord</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
+    <script src="script.js"></script>
 </body>
 </html>
