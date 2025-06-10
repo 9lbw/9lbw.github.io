@@ -1,0 +1,63 @@
+/* Force KaTeX font loading for all text elements */
+@font-face {
+    font-family: 'KaTeX_Main';
+    src: url('https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/fonts/KaTeX_Main-Regular.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/fonts/KaTeX_Main-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'KaTeX_Main-Bold';
+    src: url('https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/fonts/KaTeX_Main-Bold.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/fonts/KaTeX_Main-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'KaTeX_Math-Italic';
+    src: url('https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/fonts/KaTeX_Math-Italic.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/fonts/KaTeX_Math-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'KaTeX_Typewriter';
+    src: url('https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/fonts/KaTeX_Typewriter-Regular.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/fonts/KaTeX_Typewriter-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Use KaTeX fonts when available */
+.katex { font-size: 1.25em; }
+
+/* Ensure all text uses KaTeX fonts */
+body, h1, h2, h3, h4, h5, h6, p, a, span, div, li, time, button {
+    font-family: "KaTeX_Main", "Computer Modern Serif", "Latin Modern Roman", "Times New Roman", serif;
+}
+
+/* Use KaTeX italic font for emphasis */
+em, i, .tagline {
+    font-family: "KaTeX_Math-Italic", "KaTeX_Main", "Computer Modern Serif", "Latin Modern Roman", "Times New Roman", serif;
+    font-style: italic;
+}
+
+/* Use KaTeX bold font for strong text */
+strong, b {
+    font-family: "KaTeX_Main-Bold", "KaTeX_Main", "Computer Modern Serif", "Latin Modern Roman", "Times New Roman", serif;
+    font-weight: 700;
+}
+
+/* Use KaTeX monospace font for code */
+code, pre, .code {
+    font-family: "KaTeX_Typewriter", "Courier New", monospace;
+}
+
+/* Ensure proper spacing and readability */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "KaTeX_Main-Bold", "KaTeX_Main", "Computer Modern Serif", "Latin Modern Roman", "Times New Roman", serif;
+    font-weight: 700;
+}

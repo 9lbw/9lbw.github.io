@@ -1,0 +1,50 @@
+/* Responsive design */
+@media (max-width: 1000px) {
+    .container {
+        padding: 30px;
+        gap: 30px;
+    }
+    
+    .name {
+        font-size: 3rem;
+    }
+    
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        gap: 20px;
+    }
+    
+    .name {
+        font-size: 2.5rem;
+    }
+    
+    .navigation {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .footer {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .contact {
+        gap: 20px;
+    }
+    
+    .section h2 {
+        font-size: 2rem;
+    }
+    
+    body {
+        font-size: 16px;
+    }
+}

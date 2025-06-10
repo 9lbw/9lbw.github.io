@@ -1,0 +1,30 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "KaTeX_Main", "Computer Modern Serif", "Latin Modern Roman", "Times New Roman", serif;
+    line-height: 1.6;
+    font-size: 18px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Light mode (default) */
+.light-mode {
+    color: #000;
+    background: #fff;
+}
+
+/* Dark mode */
+.dark-mode {
+    color: #e0e0e0;
+    background: #171616;
+}
+
+/* Smooth scrolling for navigation */
+html {
+    scroll-behavior: smooth;
+}
