@@ -1,90 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>9lbw</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <!-- Highlight.js theme -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
-</head>
-<body>
-    <div class="container">
-        <header class="header">
-            <h1 class="name">9lbw</h1>
-            <p class="tagline">Self-proclaimed Software Engineer</p>
-        </header>
-
-        <nav class="navigation">
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#blog">Blog</a>
-            <button id="theme-toggle" class="theme-toggle">◐</button>
-        </nav>
-
-        <main class="content">
-            <section id="about" class="section">
-                <h2>About Me</h2>
-                <p>I'm Phillip. Online, I go by 9lbw, an alias derived from a pretentious Japanese visual novel about mages and historical figures. I figured the name truly radiates "professional at work."
-                <p>My first foray into this world was as "thatrtxdude," a username that was both unfortunate and inaccurate after I switched to AMD. I became a Source Engine modder for games like Garry's Mod and Left 4 Dead 2, a career that met a spectacular end when my primary dependency imploded. Its creator had a meltdown of biblical proportions, rage-quit the internet, and vaporized his addons, turning my Steam Workshop into a mass grave overnight.</p>
-                <p>It turns out that tying your legacy to a man who writes fanfiction about his own overpowered OCs is a poor long-term strategy. It was, however, a fantastic lesson in dependency stability and choosing your dependencies wisely. After that humbling experience, my interests shifted toward building my own tools from scratch, turning a hobby fueled by community chaos into a passion for real engineering.</p>
-            </section>
-
-            <section id="projects" class="section">
-                <h2>Projects</h2>
-                <div class="project-grid">
-                    <div class="project-item">
-                        <h3>DNS Video Streamer</h3>
-                        <p>Streams the "Bad Apple!!" music video over DNS A record queries. A fun exploration of protocol abuse and creative problem-solving. Probably not recommended for production networks.</p>
-                        <p><strong>Tech:</strong> Python, Brotli, DNSLib</p>
-                    </div>
-                    <div class="project-item">
-                        <h3>My .dotfiles</h3>
-                        <p>My personal development environment configuration. A carefully maintained collection of scripts and settings that make my workflow more efficient. Always evolving as I discover new tools and techniques.</p>
-                        <p><strong>Tech:</strong> Bash, JSON</p>
-                    </div>
-                    <div class="project-item">
-                        <h3>Tarkov Texture Converter</h3>
-                        <p>A specialized texture converter for Tarkov game assets. Originally built in Python, later rewritten in C# with OpenCV for better performance. Includes utilities for working with .gltf files and their underlying JSON structure.</p>
-                        <p><strong>Tech:</strong> C#, OpenCV</p>
-                    </div>
-                    <div class="project-item">
-                        <h3>zbox</h3>
-                        <p>A learning project implementing GNU coreutils from scratch in Zig, inspired by BusyBox. Not intended for production use, but a great way to understand both the Zig language and the fundamentals of command-line utilities.</p>
-                        <p><strong>Tech:</strong> Zig</p>
-                    </div>
-                </div>
-            </section>
-
-                                                                                                                                                                                                                                                <section id="blog" class="section">
-                <h2>Blog</h2>
-                <article class="blog-post">
-                    <h3><a href="blog/linux-sucks-i-love-it.html">Linux sucks, I love it</a></h3>
-                    <time>June 10, 2025</time>
-                    <p>Or more accurately, how I learned to love Gentoo</p>
-                </article>
-                <article class="blog-post">
-                    <h3><a href="blog/streaming-video-over-dns.html">Streaming Bad Apple Over DNS</a></h3>
-                    <time>June 09, 2025</time>
-                    <p>Streaming the classic 'Bad Apple!!' music video through DNS queries, because apparently I have too much time and not enough sense.</p>
-                </article>
-            </section>
-        </main>
-
-        <footer class="footer">
-            <p>© 2025 9lbw.</p>
-            <div class="contact">
-                <a href="https://github.com/9lbw">GitHub</a>
-                <a href="mailto:contact@9lbw.dev">Email</a>
-            </div>
-        </footer>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   9lbw
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" rel="stylesheet"/>
+  <link href="styles.css" rel="stylesheet"/>
+  <!-- Highlight.js theme -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <div class="container">
+   <header class="header">
+    <h1 class="name">
+     9lbw
+    </h1>
+    <p class="tagline">
+     Self-proclaimed Software Engineer
+    </p>
+   </header>
+   <nav class="navigation">
+    <a href="#about">
+     About
+    </a>
+    <a href="#projects">
+     Projects
+    </a>
+    <a href="#blog">
+     Blog
+    </a>
+    <button class="theme-toggle" id="theme-toggle">
+     ◐
+    </button>
+   </nav>
+   <main class="content">
+    <section class="section" id="about">
+     <h2>
+      About Me
+     </h2>
+     <p>
+      I'm Phillip. Online, I go by 9lbw, an alias derived from a pretentious Japanese visual novel about mages and historical figures. I figured the name truly radiates "professional at work."
+      <p>
+       My first foray into this world was as "thatrtxdude," a username that was both unfortunate and inaccurate after I switched to AMD. I became a Source Engine modder for games like Garry's Mod and Left 4 Dead 2, a career that met a spectacular end when my primary dependency imploded. Its creator had a meltdown of biblical proportions, rage-quit the internet, and vaporized his addons, turning my Steam Workshop into a mass grave overnight.
+      </p>
+      <p>
+       It turns out that tying your legacy to a man who writes fanfiction about his own overpowered OCs is a poor long-term strategy. It was, however, a fantastic lesson in dependency stability and choosing your dependencies wisely. After that humbling experience, my interests shifted toward building my own tools from scratch, turning a hobby fueled by community chaos into a passion for real engineering.
+      </p>
+     </p>
+    </section>
+    <section class="section" id="projects">
+     <h2>
+      Projects
+     </h2>
+     <div class="project-grid">
+      <div class="project-item">
+       <h3>
+        DNS Video Streamer
+       </h3>
+       <p>
+        Streams the "Bad Apple!!" music video over DNS A record queries. A fun exploration of protocol abuse and creative problem-solving. Probably not recommended for production networks.
+       </p>
+       <p>
+        <strong>
+         Tech:
+        </strong>
+        Python, Brotli, DNSLib
+       </p>
+      </div>
+      <div class="project-item">
+       <h3>
+        My .dotfiles
+       </h3>
+       <p>
+        My personal development environment configuration. A carefully maintained collection of scripts and settings that make my workflow more efficient. Always evolving as I discover new tools and techniques.
+       </p>
+       <p>
+        <strong>
+         Tech:
+        </strong>
+        Bash, JSON
+       </p>
+      </div>
+      <div class="project-item">
+       <h3>
+        Tarkov Texture Converter
+       </h3>
+       <p>
+        A specialized texture converter for Tarkov game assets. Originally built in Python, later rewritten in C# with OpenCV for better performance. Includes utilities for working with .gltf files and their underlying JSON structure.
+       </p>
+       <p>
+        <strong>
+         Tech:
+        </strong>
+        C#, OpenCV
+       </p>
+      </div>
+      <div class="project-item">
+       <h3>
+        zbox
+       </h3>
+       <p>
+        A learning project implementing GNU coreutils from scratch in Zig, inspired by BusyBox. Not intended for production use, but a great way to understand both the Zig language and the fundamentals of command-line utilities.
+       </p>
+       <p>
+        <strong>
+         Tech:
+        </strong>
+        Zig
+       </p>
+      </div>
+     </div>
+    </section>
+    <section class="section" id="blog">
+     <h2>
+      Blog
+     </h2>
+     <article class="blog-post">
+      <h3>
+       <a href="blog/linux-sucks-i-love-it.html">
+        Linux sucks, I love it
+       </a>
+      </h3>
+      <time>
+       June 10, 2025
+      </time>
+      <p>
+       Or more accurately, how I learned to love Gentoo
+      </p>
+     </article>
+     <article class="blog-post">
+      <h3>
+       <a href="blog/streaming-video-over-dns.html">
+        Streaming Bad Apple Over DNS
+       </a>
+      </h3>
+      <time>
+       June 09, 2025
+      </time>
+      <p>
+       Streaming the classic 'Bad Apple!!' music video through DNS queries, because apparently I have too much time and not enough sense.
+      </p>
+     </article>
+    </section>
+   </main>
+   <footer class="footer">
+    <p>
+     © 2025 9lbw.
+    </p>
+    <div class="contact">
+     <a href="https://github.com/9lbw">
+      GitHub
+     </a>
+     <a href="mailto:contact@9lbw.dev">
+      Email
+     </a>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
+   </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js">
+  </script>
+  <script>
+   document.addEventListener("DOMContentLoaded", function() {
             renderMathInElement(document.body, {
                 delimiters: [
                     {left: "$$", right: "$$", display: true},
@@ -112,8 +192,11 @@
                 }
             });
         });
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-    <script>hljs.highlightAll();</script>
-</body>
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js">
+  </script>
+  <script>
+   hljs.highlightAll();
+  </script>
+ </body>
 </html>
