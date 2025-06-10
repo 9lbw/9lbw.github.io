@@ -3,168 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>9lbw | Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap">
+    <title>9lbw</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Highlight.js theme -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
 </head>
 <body>
-    <header>
-        <div class="header-container">
-            <h1>9lbw</h1>
-            <nav>
-                <ul>
-                    <li><a href="#about">ABOUT</a></li>
-                    <li><a href="#projects">PROJECTS</a></li>
-                    <li><a href="#skills">SKILLS</a></li>
-                    <li><a href="blog/index.html">BLOG</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <div class="container">
+        <header class="header">
+            <h1 class="name">9lbw</h1>
+            <p class="tagline">Self-proclaimed Software Engineer</p>
+        </header>
 
-    <main>
-        <section id="hero" class="glass-panel">
-            <div class="container grid">
-                <div class="hero-text">
-                    <h2>DEVELOPER</h2>
-                    <h3>ZIG • LUA • JAVA • C</h3>
-                    <p>Building digital solutions with a focus on networking and systems programming.</p>
-                </div>
-                <div class="hero-terminal">
-                    <div class="terminal-header">
-                        <span class="terminal-dot"></span>
-                        <span class="terminal-dot"></span>
-                        <span class="terminal-dot"></span>
-                        <span class="terminal-title">terminal</span>
-                    </div>
-                    <div class="terminal-body">
-                        <p><span class="prompt">~</span> $ whoami</p>
-                        <p>9lbw</p>
-                        <p><span class="prompt">~</span> $ uname -a</p>
-                        <p>Gentoo Linux</p>
-                        <p><span class="prompt">~</span> $ ls -la skills/</p>
-                        <p>zig lua java c networking roblox</p>
-                        <p><span class="prompt">~</span> $ _</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <nav class="navigation">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#blog">Blog</a>
+            <button id="theme-toggle" class="theme-toggle">◐</button>
+        </nav>
 
-        <section id="about" class="glass-panel">
-            <div class="container">
-                <h2>ABOUT ME</h2>
-                <div class="grid">
-                    <div class="about-text">
-                        <p>I go by 9lbw online. I'm a developer with expertise in Zig, Lua, Java, and Arduino C.</p>
-                        <p>I have a particular interest in computer networking and router technology.</p>
-                        <p>I run Gentoo Linux as my daily driver, embracing the philosophy of customization and optimization.</p>
-                        <p>Currently, I'm working as the main developer for RORTA Concepts, a Roblox developer group where I create immersive gaming experiences.</p>
+        <main class="content">
+            <section id="about" class="section">
+                <h2>About Me</h2>
+                <p>I'm Phillip. Online, I go by 9lbw, an alias derived from a pretentious Japanese visual novel about mages and historical figures. I figured the name truly radiates "professional at work," and it's stuck with me ever since.</p>
+                <p>My first foray into this world was as "thatrtxdude," a username that was both unfortunate and inaccurate after I switched to AMD. I became a Source Engine modder for games like Garry's Mod and Left 4 Dead 2, a career that met a spectacular end when my primary dependency imploded. Its creator had a meltdown of biblical proportions, rage-quit the internet, and vaporized his addons, turning my Steam Workshop into a mass grave overnight.</p>
+                <p>It turns out that tying your legacy to a man who writes fanfiction about his own overpowered OCs is a poor long-term strategy. It was, however, a fantastic lesson in dependency stability and choosing your dependencies wisely. After that humbling experience, my interests shifted toward building my own tools from scratch, turning a hobby fueled by community chaos into a passion for real engineering.</p>
+            </section>
+
+            <section id="projects" class="section">
+                <h2>Projects</h2>
+                <div class="project-grid">
+                    <div class="project-item">
+                        <h3>DNS Video Streamer</h3>
+                        <p>Streams the "Bad Apple!!" music video over DNS A record queries. A fun exploration of protocol abuse and creative problem-solving. Probably not recommended for production networks.</p>
+                        <p><strong>Tech:</strong> Python, Brotli, DNSLib</p>
                     </div>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <span class="stat-value">4+</span>
-                            <span class="stat-label">LANGUAGES</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-value">GENTOO</span>
-                            <span class="stat-label">LINUX</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-value">RORTA</span>
-                            <span class="stat-label">CONCEPTS</span>
-                        </div>
+                    <div class="project-item">
+                        <h3>My .dotfiles</h3>
+                        <p>My personal development environment configuration. A carefully maintained collection of scripts and settings that make my workflow more efficient. Always evolving as I discover new tools and techniques.</p>
+                        <p><strong>Tech:</strong> Bash, JSON</p>
+                    </div>
+                    <div class="project-item">
+                        <h3>Tarkov Texture Converter</h3>
+                        <p>A specialized texture converter for Tarkov game assets. Originally built in Python, later rewritten in C# with OpenCV for better performance. Includes utilities for working with .gltf files and their underlying JSON structure.</p>
+                        <p><strong>Tech:</strong> C#, OpenCV</p>
+                    </div>
+                    <div class="project-item">
+                        <h3>zbox</h3>
+                        <p>A learning project implementing GNU coreutils from scratch in Zig, inspired by BusyBox. Not intended for production use, but a great way to understand both the Zig language and the fundamentals of command-line utilities.</p>
+                        <p><strong>Tech:</strong> Zig</p>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="projects" class="glass-panel">
-            <div class="container">
-                <h2>PROJECTS</h2>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-title">PROJECT_01</div>
-                        <div class="project-desc">A networking tool built with Zig</div>
-                        <div class="project-tags">
-                            <span>ZIG</span>
-                            <span>NETWORKING</span>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-title">PROJECT_02</div>
-                        <div class="project-desc">Roblox game for RORTA Concepts</div>
-                        <div class="project-tags">
-                            <span>LUA</span>
-                            <span>ROBLOX</span>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-title">PROJECT_03</div>
-                        <div class="project-desc">Arduino-based IoT system</div>
-                        <div class="project-tags">
-                            <span>C</span>
-                            <span>ARDUINO</span>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-title">PROJECT_04</div>
-                        <div class="project-desc">Custom router firmware</div>
-                        <div class="project-tags">
-                            <span>C</span>
-                            <span>NETWORKING</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+            <section id="blog" class="section">
+                <h2>Blog</h2>
+                <article class="blog-post">
+                    <h3><a href="blog/streaming-video-over-dns.html">Streaming Bad Apple Over DNS Because Why Not</a></h3>
+                    <time>June 3, 2025</time>
+                    <p>Sometimes you look at a protocol specification and think, "I wonder if I can make this do something completely unrelated to its original purpose." DNS seemed like the perfect victim. The results were both technically impressive and morally questionable...</p>
+                </article>
+            </section>
+        </main>
 
-        <section id="skills" class="glass-panel">
-            <div class="container">
-                <h2>SKILLS</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>LANGUAGES</h3>
-                        <ul>
-                            <li>ZIG</li>
-                            <li>LUA</li>
-                            <li>JAVA</li>
-                            <li>ARDUINO C</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>TECHNOLOGIES</h3>
-                        <ul>
-                            <li>NETWORKING</li>
-                            <li>ROUTER CONFIGURATION</li>
-                            <li>GENTOO LINUX</li>
-                            <li>EMBEDDED SYSTEMS</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>OTHER</h3>
-                        <ul>
-                            <li>ROBLOX DEVELOPMENT</li>
-                            <li>SYSTEMS PROGRAMMING</li>
-                            <li>LINUX ADMINISTRATION</li>
-                            <li>OPEN SOURCE CONTRIBUTION</li>
-                        </ul>
-                    </div>
-                </div>
+        <footer class="footer">
+            <p>© 2025 9lbw.</p>
+            <div class="contact">
+                <a href="https://github.com/9lbw">GitHub</a>
+                <a href="mailto:contact@9lbw.dev">Email</a>
             </div>
-        </section>
-    </main>
+        </footer>
+    </div>
 
-    <footer>
-        <div class="container">
-            <p>© 2025 9lbw</p>
-            <div class="footer-links">
-                <a href="https://github.com/" target="_blank">GITHUB</a>
-                <a href="https://roblox.com/" target="_blank">ROBLOX</a>
-                <a href="blog/index.html">BLOG</a>
-            </div>
-        </div>
-    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
 
-    <script src="script.js"></script>
+            // Dark mode toggle functionality
+            const themeToggle = document.getElementById('theme-toggle');
+            const body = document.body;
+            
+            // Check for saved theme preference or default to light mode
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            body.classList.add(savedTheme + '-mode');
+            
+            themeToggle.addEventListener('click', () => {
+                if (body.classList.contains('light-mode')) {
+                    body.classList.remove('light-mode');
+                    body.classList.add('dark-mode');
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    body.classList.remove('dark-mode');
+                    body.classList.add('light-mode');
+                    localStorage.setItem('theme', 'light');
+                }
+            });
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
 </body>
 </html>
