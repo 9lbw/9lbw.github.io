@@ -1,0 +1,132 @@
+body {
+    background-color: #0d0d0d; 
+    color: #ffffff; /* Classic green terminal text */
+    
+    font-family: 'Latin Modern Mono', 'Courier New', Courier, monospace;
+    font-size: 16px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+img {
+    image-rendering: auto;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+header, footer {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+header pre {
+    color: #999; /* Muted color for the top text */
+}
+
+main {
+    width: 100%;
+    max-width: 800px; /* A fixed width is very 90s */
+    margin: 20px 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* This is the key to the 'cult.ist' look */
+fieldset {
+    border: 2px groove #fff;
+    background: #111;
+    box-shadow: inset 2px 2px #444, 3px 3px #000;
+    margin-bottom: 25px;
+    padding: 10px 20px;
+}
+
+legend {
+    color: #fff; /* Make the title stand out */
+    padding: 0 10px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    letter-spacing: 1px;
+}
+
+/* 90s style table borders */
+table {
+    border: 2px dashed #fff;
+    background: #111;
+    box-shadow: 4px 4px 0 #333;
+}
+td {
+    border: 1px solid #fff;
+    padding: 10px;
+}
+
+/* Retro links */
+a {
+    color: #00ffff;
+    text-decoration: underline;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+a:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* Fake visitor counter style */
+#counter {
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 2px;
+    font-size: 1.1em;
+    background: #000;
+    color: #0f0;
+    border: 1px inset #fff;
+    padding: 2px 6px;
+}
+
+hr {
+    border: 0;
+    border-top: 2px groove #fff;
+    margin: 16px 0;
+}
+
+p, ul {
+    line-height: 1.6;
+}
+
+ul {
+    list-style-type: square; /* A more "blocky" bullet point */
+    padding-left: 20px;
+}
+
+a {
+    color: #00ffff; /* Cyan links feel very retro-tech */
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #ffffff;
+    background-color: #00ffff30; /* A subtle highlight on hover */
+}
+
+pre {
+    /* Make preformatted text look like a system dump */
+    color: #ccc;
+    font-family: inherit; /* Use the same monospaced font */
+    white-space: pre-wrap; /* Allows text to wrap */
+    word-wrap: break-word;
+}
+
+footer {
+    margin-top: auto; /* Pushes the footer to the bottom */
+    padding-top: 20px;
+}
+
+footer img {
+    margin: 0 5px; /* Space out the little buttons */
+}
