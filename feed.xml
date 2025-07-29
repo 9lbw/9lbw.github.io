@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ninelives</title>
     <link>https://9lbw.org/</link>
     <description>A personal blog by 9lbw</description>
-    <lastBuildDate>Tue, 29 Jul 2025 02:18:00 +0000</lastBuildDate>
+    <atom:link href="https://9lbw.org/feed.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 Jul 2025 02:18:00 +0000</lastBuildDate>
 
     <item>
       <title>The Death of Online Privacy</title>
       <link>https://9lbw.org/blog/tdoop.html</link>
       <description>This past Friday, the UK implemented their ID-based age verification system across multiple websites. The normalization of mandatory identity checks raises concerns about mass surveillance.</description>
-      <pubDate>Tue, 29 Jul 2025 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Jul 2025 02:18:00 +0000</pubDate>
       <guid>https://9lbw.org/blog/tdoop.html</guid>
     </item>
 
@@ -18,7 +19,7 @@
       <title>First Post</title>
       <link>https://9lbw.org/blog/first-post.html</link>
       <description>blah blah</description>
-      <pubDate>Mon, 28 Jul 2025 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 28 Jul 2025 00:00:00 +0000</pubDate>
       <guid>https://9lbw.org/blog/first-post.html</guid>
     </item>
 
