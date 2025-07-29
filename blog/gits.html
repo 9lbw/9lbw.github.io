@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Death of Online Privacy: Part II - ninelives</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div style="font-family: 'Verdana', Geneva, Tahoma, sans-serif; font-size: 1.1em; text-align: center; margin-top: 8px; letter-spacing: 1px;">
+        <a href="../blog.html" style="text-decoration: none; color: inherit;">&larr; Back to Blog</a>
+    </div>
+    <header>
+        <pre style="font-family: 'Courier New', Courier, monospace; font-size: 1.1em;">The Death of Online Privacy: Part II</pre>
+    </header>
+    <hr>
+    <main>
+        <div style="max-width: 700px; margin: 0 auto;">
+            <fieldset>
+                <legend>[ Blog ]</legend>
+                <h2>The Death of Online Privacy: Part II</h2>
+                <p><em>July 30, 2025</em></p>
+                <p>In my last post, <a href=tdoop.html>"The Death of Online Privacy"</a> I talked about how "reasonable" measures, like the UK's ID-based age verification, are normalizing the infrastructure of surveillance. We are witnessing the creeping erosion of our digital autonomy, all in the name of safety and for the children. But while these public-facing systems are concerning, the truly shady side of government surveillance operates in the shadows, far from public debate and scrutiny.</p>
+                <p>Sadly, it's not about a dystopian future where soldiers litter every street corner. It's much more subtle and, frankly, more insidious, by exploiting the very foundations of the technology we use every day. Let's pull back the curtain on a few of these methods.</p>
+                <h3>The Long Con</h3>
+                <p>In March of 2024, Andres Freund, Microsoft employee and PostgreSQL developer, discovered a backdoor in the popular XZ utils library used by many, many Linux distros. Freund discovered the backdoor after observing that his SSH connections were using an unreasonable amount of system resources. After reporting his findings, Red Hat gave the backdoor a CVE rating of 10, the highest possible level.</p>
+                <p>The backdoor itself abused systemd and mainly targeted OpenSSH's SSH server daemon. According to Red Hat's analysis, the backdoor can "enable a malicious actor to break sshd authentication and gain unauthorized access to the entire system remotely."</p>
+                <p>What matters isn't the backdoor itself, however, but instead how it was brought into existence in the first place. A (probably) state-backed actor by the name of "Jia Tan" used social engineering tricks to gaslight the previous maintainer of XZ utils, Lasse Collin. From November of 2021 to February of 2024, "Jia Tan" committed legitimate code to the XZ utils repository, to gain trust from the community, and ultimately, Lasse. After some persuasion from sock puppet accounts (to make Lasse feel inadequate as a maintainer), Jia Tan was promoted to maintainer. This is where the real attack began. The backdoor itself was not inserted into the repository directly, that would've been too obvious, but was rather slipped into the release builds of XZ utils.</p>
+                <p>This is just one of many so-called "supply chain attacks." The SolarWinds hack in 2020 compromised software updates that were then installed by thousands of organizations, including multiple US government agencies. The CCleaner attack in 2017 distributed malware through what users thought were legitimate software updates. Even webdevs are affected by this. JavaScript libraries (or NPM libraries if you want to get specific) regularly get compromised with malicious code hiding behind typosquatted names.</p>
+                <p>But at least with software supply chain attacks, there's theoretically a way to audit the code, verify signatures, or compile from source if you're paranoid enough. Hardware is a different beast entirely. When the surveillance is baked directly into your processor, game over.</p>
+                <h3>Ghost in the Silicon</h3>
+                <p>Now onto the more spooky stuff. What you are about to read might sound like a conspiracy theory from a deranged nutjob like Alex Jones or Kanye West, is however, 100% real. Let's dive into it.</p>
+                <p>Most Intel processors since 2008 (and AMD since 2013) have embedded microcontrollers within the CPU that act as a "management platform" for your computer. Intel calls this Management Engine (ME), AMD calls it Platform Security Processor (PSP). </p>
+                <p>Intel markets the ME as a helpful corporate management tool, something that lets IT departments remotely monitor, maintain, and troubleshoot computers across their network. Need to push updates to a machine that's powered off? ME's got you covered. Want to remotely diagnose hardware issues or recover a system that won't boot? That's what it's "for." AMD's PSP is pitched similarly, focusing on "platform security" and enterprise management capabilities.</p>
+                <p>Sounds reasonable enough, right? Oh my sweet summer child. These aren't passive monitoring chips. The ME and PSP are, as previously stated, microcontrollers running their own operating systems (Intel ME runs MINIX ironically enough) with their own network stacks, cryptographic functions, and, here's the fun part, complete access to your system's memory and network interface. They operate at a level below your main operating system, referred to as Ring -3, which means your antivirus software, firewall, and any other security measures you've installed are completely blind to what these things are doing. To rub even more salt into the wound, these microcontrollers are on as long as your PC is connected to the wall/mains.</p>
+                <p>But surely you can disable these right? AMD is so gracious to give you the option if you want to mess around with your BIOS, but you're out of luck if you have an Intel processor. Intel has made sure their ME stays permanently embedded in your system. No BIOS toggle, no firmware hack, no physical modification that will get rid of it. It's welded into the silicon like a tumor that you're stuck with for the life of your CPU.</p>
+                <p>And here's the kicker: even if you do disable AMD's PSP, you're still running proprietary firmware that you had to trust was actually disabled. How do you verify that flipping a BIOS switch actually turns off a black box microcontroller? You don't. You just have to take AMD's word for it.</p>
+                <p>Intel's ME is also plagued with multiple high, even critical severity CVEs that can be exploited to gain access to your computer. Here's a list of them, if you're curious (Note that most of these have been resolved, but alas, for the sake of making an argument):</p>
+                <ul>
+                    <li><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-38307">CVE-2024-38307</a> - 7.1 HIGH - Improper input validation in the firmware for some Intel(R) AMT and Intel(R) Standard Manageability may allow an authenticated user to potentially enable denial of service via network access.</li>
+                    <li><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-8758">CVE-2020-8758</a> - 9.8 CRITICAL - Improper buffer restrictions in network subsystem in provisioned Intel(R) AMT and Intel(R) ISM may allow an unauthenticated user to potentially enable escalation of privilege via network access. On un-provisioned systems, an authenticated user may potentially enable escalation of privilege via local access.</li>
+                    <li><a href="https://nvd.nist.gov/vuln/detail/CVE-2018-3628">CVE-2018-3628</a> - 8.8 HIGH - Buffer overflow in HTTP handler in Intel Active Management Technology in Intel Converged Security Manageability Engine Firmware 3.x, 4.x, 5.x, 6.x, 7.x, 8.x, 9.x, 10.x, and 11.x may allow an attacker to execute arbitrary code via the same subnet.</li>
+                </ul>
+                <h3>Well, how do I protect myself?</h3>
+                <p>Against supply chain attacks? Read source code. Understand source code. Only download trusted open source software. Do audits. You know, all the things that require actual effort and technical knowledge that most people can't be bothered with  (sorry not sorry).</p>
+                <p>Against our little microcontroller friends? Nothing. Well, you <em>can</em>, but only if you're Richard Stallman and want to use a ThinkPad from 2009 with Libreboot. The best possible solution in the near-future is RISC-V, but who knows what the silicon manufacturers will slip into that when it becomes mainstream.</p>
+                <p>The uncomfortable truth is that we've built our entire digital infrastructure on a foundation of trust. Trust in corporations, trust in governments, trust in systems we can't audit or control. And as we've seen, that trust is routinely betrayed.</p>
+                <p>So go ahead, install Signal and use Tor. Set up your VPN and switch to Linux. It's better than doing nothing. But don't kid yourself into thinking you've escaped the surveillance state. The ghost in your silicon is still there, waiting.</p>
+                <p><em>though to be honest, you're probably too unimportant to get targeted by any of this :)</em></p>
+            </fieldset>
+        </div>
+    </main>
+    <footer>
+        <div style="text-align: center; margin-top: 18px;">
+            <img src="https://cyber.dabamos.de/88x31/vim.gif" alt="This website was made with Vim">
+            <img src="https://cyber.dabamos.de/88x31/zettai.gif" alt="Zettai">
+            <img src="https://88x31.kate.pet/machine_kills_fascists.jpg" alt="This Machine Kills Fasicsts">
+        </div>
+    </footer>
+</body>
+</html>
