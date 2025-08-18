@@ -1,18 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ninelives</title>
     <link>https://9lbw.org/</link>
     <description>A personal blog by 9lbw</description>
+    <language>en</language>
     <atom:link href="https://9lbw.org/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 29 Jul 2025 02:18:00 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 18 Aug 2025 12:00:00 +0000</lastBuildDate>
+  <pubDate>Mon, 18 Aug 2025 12:00:00 +0000</pubDate>
+    <generator>hand-crafted static feed</generator>
+    <ttl>180</ttl>
+    <copyright>2025 9lbw</copyright>
+
+    <!-- Most recent items first -->
+    <item>
+      <title>Software Minimalism</title>
+      <link>https://9lbw.org/blog/software-minimalism.html</link>
+      <description>Reflections on simplicity in software: sudo vs doas, systemd, suckless, and the UNIX philosophy.</description>
+      <pubDate>Sun, 17 Aug 2025 12:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://9lbw.org/blog/software-minimalism.html</guid>
+    </item>
+
+    <item>
+      <title>The Death of Online Privacy: Part II</title>
+      <link>https://9lbw.org/blog/gits.html</link>
+      <description>Exploring deeper layers of modern surveillance: supply chain attacks, hardware backdoors, and trust erosion.</description>
+      <pubDate>Wed, 30 Jul 2025 10:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://9lbw.org/blog/gits.html</guid>
+    </item>
 
     <item>
       <title>The Death of Online Privacy</title>
       <link>https://9lbw.org/blog/tdoop.html</link>
-      <description>This past Friday, the UK implemented their ID-based age verification system across multiple websites. The normalization of mandatory identity checks raises concerns about mass surveillance.</description>
+      <description>The normalization of mandatory identity checks and the rise of mass surveillance infrastructure.</description>
       <pubDate>Tue, 29 Jul 2025 02:18:00 +0000</pubDate>
-      <guid>https://9lbw.org/blog/tdoop.html</guid>
+      <guid isPermaLink="true">https://9lbw.org/blog/tdoop.html</guid>
     </item>
 
     <item>
@@ -20,7 +42,7 @@
       <link>https://9lbw.org/blog/first-post.html</link>
       <description>blah blah</description>
       <pubDate>Mon, 28 Jul 2025 14:45:12 +0000</pubDate>
-      <guid>https://9lbw.org/blog/first-post.html</guid>
+      <guid isPermaLink="true">https://9lbw.org/blog/first-post.html</guid>
     </item>
 
   </channel>
